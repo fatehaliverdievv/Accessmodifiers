@@ -16,13 +16,13 @@ namespace ClassLibrary
         public int Employeelimit
         {
             get { return _employeelimit; }
-            set { if (value > 0) { _employeelimit = value; } }
+            set { if (value > 0) { _employeelimit = value; } else { Console.WriteLine("Wrong Employee Limit!!"); } }
         }
         public int Salarylimit
         {
             get { return _salarylimit; }
-            set { if (value >= 250) { _salarylimit = value; } }
-            }
+            set { if (value >= 250) { _salarylimit = value; } else { Console.WriteLine("Wrong Salary Limit!!"); } }
+        }
         public string Name
         {
             get { return _name; }
@@ -32,7 +32,11 @@ namespace ClassLibrary
                 if(value.Length > 0 && value.Length > 15)
                 {
                     _name = value;
-                } 
+                }
+                else
+                {
+                    Console.WriteLine("Wrong Department Name!!!");
+                }
             }
         }
         public Department(string name, int employeeLimit, int salarylimit)
